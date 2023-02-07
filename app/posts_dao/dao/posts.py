@@ -33,7 +33,8 @@ class Posts:
         return need_posts
 
     def get_post_by_name(self, name):
+        user_posts = []
         for post in self.posts:
             if post.name.lower() == name.lower():
-                return post
-        return False
+                user_posts.append(post)
+        return user_posts
