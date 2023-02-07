@@ -8,6 +8,16 @@ UPLOAD_FOLDER = "uploads/images"
 
 app = Flask(__name__)
 
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html')
+
+
+@app.errorhandler(500)
+def page_not_found(error):
+    return render_template('505.html')
+
 #logging.basicConfig(filename="sample.log", filemode='w', level=logging.DEBUG, encoding='utf-8')
 
 app.register_blueprint(posts_blueprint)
